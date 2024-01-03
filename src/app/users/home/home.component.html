@@ -1,0 +1,26 @@
+<div class="container">
+  <table id="users">
+    <caption>
+      Users
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of allUsers; track $index) {
+      <tr>
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.name }}</td>
+        <td>
+          <button type="button" (click)="updateItem(item.id)">Edit</button>
+          <button type="button" (click)="deleteItem(item.id)">Delete</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
